@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+      tr,td{
+        padding: 7px
+      }
+      .button {
+  background-color:#77ab59; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+  <center>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>{{prescription.patientName}}</td>
+      </tr>
+      <tr>
+        <td>Doctor Name:</td>
+        <td>{{prescription.doctorName}}</td>
+      </tr>
+      <tr>
+        <td>Date:</td>
+        <td>{{prescription.Date}}</td>
+      </tr>
+      <tr>
+        <td>Prescription:</td>
+        <td>{{prescription.Description}}</td>
+      </tr>
+    </table>
+  </center>
+	
+	
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+      tr,td{
+        padding: 7px
+      }
+      .button {
+  background-color:#77ab59; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+  <center>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>{{appointments.patientName}}</td>
+      </tr>
+      <tr>
+        <td>Doctor Name:</td>
+        <td>{{appointments.doctorName}}</td>
+      </tr>
+      <tr>
+        <td>Date:</td>
+        <td>{{appointments.appointmentDate}}</td>
+      </tr>
+      <tr>
+        <td>Time:</td>
+        <td>{{appointments.timeslot}}</td>
+      </tr>
+      <tr>
+        <td>Consultation Fees:</td>
+        <td>{{appointments.fees}}</td>
+      </tr>
+      <tr>
+        <td>Message:</td>
+        <td>{{appointments.message}}</td>
+      </tr>
+    </table>
+    {% if flag == True %}
+      <a href="{% url 'add_prescription' pk=appointments.pk%}">
+      <input type="button" value="Add Prescription" class="button"></a>
+      <a href="{% url 'view_prescription'%}">
+      <input type="button" value="View Prescription"class="button"></a>
+    {% else %}
+    <a href="{% url 'view_prescription' %}">
+    <input type="button" value="View Prescription"class="button"></a>
+    {% endif %}
+  </center>
+	
+	
+    
+</body>
+</html>

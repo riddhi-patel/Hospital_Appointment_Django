@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+      tr,td{
+        padding: 7px
+      }
+      .button {
+  background-color:#77ab59; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+<SCRIPT type="text/javascript">
+  window.history.forward();
+  function noBack() { window.history.forward(); }
+</SCRIPT>
+</HEAD>
+<BODY onload="noBack();" 
+  onpageshow="if (event.persisted) noBack();" onunload="">
+	<center>
+		<h1>Doctor Login</h1>
+		{% if msg %}
+			<b style="color: red">{{msg}}</b>
+		{% endif %}
+		<form name="login" method="post" action="{% url 'login_doctor' %}">
+			{% csrf_token %}
+			<table>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password"></td>
+				</td>
+				<tr>
+					<td><input type="submit" value="Login" class="button"></td>
+					<td><a href="#"><input type="button" value="Forgot Password" class="button"></a></td>
+						
+				</tr>
+			</table>
+			
+		</form>
+		
+	</center>
+
+</body>
+</html>

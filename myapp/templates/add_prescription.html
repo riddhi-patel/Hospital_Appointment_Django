@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+      tr,td{
+        padding: 5px
+      }
+      .button {
+  background-color:#77ab59; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+	<center>
+		<h1>Add Prescription</h1>
+		{% if msg %}
+			<b style="color: red">{{msg}}</b>
+		{% endif %}
+		<form name="add_prescription" method="post" action="{% url 'add_prescription' pk=appointment.pk %}">
+			{% csrf_token %}
+			<table>
+				<tr>
+					<td>Appointment Id</td>
+					<td><input type="text" name="Id" value="{{appointment.id}}"></td>
+				</tr>
+				<tr>
+					<td>Date</td>
+					<td><input type="date" name="date"></td>
+				</td>
+				<tr>
+					<td>Description</td>
+					<td><textarea cols="25" rows="4" name="Description"></textarea></td>
+				</td>
+				<tr>
+					<td><input type="submit" value="Add Prescription" class="button"></td>	
+				</tr>
+			</table>
+		</form>
+		
+	</center>
+
+</body>
+</html>

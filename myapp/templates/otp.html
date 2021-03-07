@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+      tr,td{
+        padding: 7px
+      }
+      .button {
+  background-color:#77ab59; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+	<center>
+		<h1>OTP Validations</h1>
+		{% if msg %}
+			<b style="color: red">{{msg}}</b>
+		{% endif %}
+		<form name="otp" method="post" action="{% url 'validate_otp' %}">
+			{% csrf_token %}
+			<table>
+				<tr>
+					<td><input type="hidden" name="otp" value="{{otp}}"></td>
+					<td><input type="hidden" name="email" value="{{email}}"></td>
+				</tr>
+				{% if myvar %}
+				<tr>
+					<td><input type="hidden" name="myvar" value="{{myvar}}"></td>
+				</tr>
+				{% endif %}
+				<tr>
+					<td>Enter OTP</td>
+					<td><input type="password" name="uotp"></td>
+				</td>
+				<tr>
+					<td colspan="2" align="center">
+					<input type="submit" value="validate_otp" class="button"></td>
+				</tr>
+			</table>
+			
+		</form>
+		
+	</center>
+
+</body>
+</html>
